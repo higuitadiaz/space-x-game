@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memoria para Lucy</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/fireworks-js@2.x/dist/index.umd.js"></script>
+    <script src="https://unpkg.com/fireworks-js@2.x/dist/index.umd.js"></script>
+</head>
+<body>
+    <div class="main-container">
+        <div id="timer">Tiempo: 0s</div>
+        <div>
+            <label for="difficulty">Nivel de dificultad:</label>
+            <select id="difficulty">
+                <option value="beginner">Principiante</option>
+                <option value="basic">Básico</option>
+                <option value="intermediate">Intermedio</option>
+                <option value="advanced">Avanzado</option>
+            </select>
+            <button onclick="startGame()">Iniciar Juego</button>
+        </div>
+        <div class="game-container" id="game-container"></div>
+    </div>
+    <div class="fireworks" id="fireworks"></div>
+    <script src="script.js"></script>
+</body>
+</html>

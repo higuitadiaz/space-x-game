@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Juego Te Gané</title>
+  <style>
+      body {
+          font-family: "Academy Engraved LET";
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 100vh;
+          margin: 0;
+          background-color: #dcd7d7;
+      }
+
+      .container {
+          text-align: center;
+          background-color: #f7f9fd;
+          padding: 20px;
+          border-radius: 12px;
+          box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      input[type="number"] {
+          padding: 10px;
+          font-size: 18px;
+          width: 100px;
+          margin-bottom: 10px;
+      }
+
+      button {
+          padding: 10px 20px;
+          font-size: 18px;
+          background-color: #007BFF;
+          color: white;
+          border: none;
+          border-radius: 5px;
+          cursor: pointer;
+      }
+
+      button:hover {
+          background-color: #0056b3;
+      }
+
+      .response {
+          margin-top: 20px;
+          font-size: 22px;
+          font-weight: bold;
+      }
+  </style>
+</head>
+<body>
+<div class="container">
+  <h1>Juego Te Gané</h1>
+  <p>Adivina el número. Debes ingresar un número del 1 al 10</p>
+  <input type="number" id="userInput" placeholder="Ingresa un número" />
+  <br>
+  <button onclick="jugar()">Jugar</button>
+  <div id="response" class="response"></div>
+</div>
+
+<script>
+	function jugar() {
+		const userInput = Number(document.getElementById('userInput').value);
+		const responseDiv = document.getElementById('response');
+
+		const serverNumber = parseInt(Math.floor(Math.random() * 10) + 1);
+
+    if (isNaN(userInput) || userInput === '') {
+			responseDiv.textContent = "Por favor, ingresa un número válido.";
+			responseDiv.style.color = "red";
+		} else if (userInput > 10 || userInput < 1) {
+			responseDiv.textContent = "Por favor, ingresa un número entre 1 y 10.";
+			responseDiv.style.color = "red";
+    } else {
+			const userNumber = parseInt(userInput);
+			if (userNumber === serverNumber) {
+        responseDiv.textContent = `El número era ${ serverNumber }, ganaste! 😱`;
+        responseDiv.style.color = "green";
+      } else {
+				responseDiv.textContent = `El número era ${ serverNumber }, te gané! 😂`;
+				responseDiv.style.color = "blue";
+			}
+		}
+
+		document.getElementById('userInput').value = '';
+	}
+</script>
+</body>
+</html>
