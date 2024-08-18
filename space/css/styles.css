@@ -1,0 +1,81 @@
+body {
+    margin: 0;
+    overflow: hidden;
+    background: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: 'Arial', sans-serif;
+}
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.game-title {
+    color: white;
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+#start-button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 10px 0;
+    cursor: pointer;
+    border-radius: 12px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+#start-button:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+}
+
+.score-container {
+    color: white;
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
+
+.game-container {
+    position: relative;
+    width: 800px;
+    height: 600px;
+    border: 1px solid white;
+    background-color: black;
+}
+
+.spaceship {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    width: 50px;
+    height: 50px;
+    background: url('/space/imgcial/img/ship-01.png') no-repeat center center;
+    background-size: contain;
+}
+
+.alien {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background: url('/space/imgcial/img/alien.png') no-repeat center center;
+    background-size: contain;
+}
+
+.projectile {
+    position: absolute;
+    width: 5px;
+    height: 20px;
+    background: red;
+}
